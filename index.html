@@ -135,12 +135,31 @@
 
     		<label>Message</label>
     		<textarea name="Message" placeholder="Enter your message"></textarea> <br>
-    		<button type="submit">Submit</button>
+    		<button type="submit" id="button">Submit</button>
 		</form>
     </div>
 
     <footer>
 		<p>copyright &copy'</p>
 	</footer>
+  <script>
+      const form = document.querySelector("form");
+      let btn = document.querySelector("#button");
+      const name = form.querySelectorAll("textarea")[0].value;
+      const email = form.querySelectorAll("textarea")[1].value;
+      const message = form.querySelectorAll("textarea")[2].value;
+
+      form.addEventListener("submit",(e)=>{
+        e.preventDefault();
+      })
+      btn.addEventListener(("click"),function(){
+        alert(
+            "Name: " + name +
+            "\nEmail: " + email +
+            "\nMessage: " + message
+        );
+        alert("button clicked!")
+      })
+  </script>
   </body>
 </html>
