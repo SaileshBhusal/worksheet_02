@@ -1,0 +1,359 @@
+/* --- Global Reset and Base Styles --- */
+* {
+    margin: 0;
+    padding: 0;
+    color: whitesmoke;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: black;
+}
+
+/* --- Header/Video Section Styling --- */
+header {
+    width: 100%;
+    height: 100vh;
+    position: relative; /* Acts as the #hero replacement */
+}
+
+/* .HD is the container for the video and overlay */
+.HD {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Targeting the video element within the header */
+.HD video {
+    position: absolute; /* Replaces #video selector */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+}
+
+/* .overlay container for the nav and main title text */
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4); /* Darkens the video slightly */
+    z-index: 5; /* Below the main title and nav */
+}
+
+/* .ID contains the main name and title */
+.ID {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    z-index: 10;
+    font-size: 30px;
+}
+
+.ID h1 {
+    font-size: 80px;
+    font-family: Arial, sans-serif;
+    color: rgb(237, 221, 201);
+}
+
+.ID p {
+    font-size: 30px;
+    font-style: italic;
+}
+
+/* Navigation Styling (Replaces #box1) */
+.portfolio-box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: absolute; /* Kept absolute, but positioned within .overlay */
+    top: 0;
+    left: 0;
+    width: 92%; /* Kept original width */
+    padding: 20px;
+    cursor: pointer;
+    font-size: 20px; /* Reduced from 40px for better fit */
+    gap: 20px;
+    z-index: 9999;
+    background: transparent;
+}
+
+.portfolio-box h2 {
+    /* Style for 'My portfolio' text */
+    font-size: 30px;
+    color: rgb(180, 108, 13);
+    margin: 0;
+}
+
+.portfolio-box nav ul {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+    padding: 0;
+}
+
+.portfolio-box nav ul li {
+    color: whitesmoke;
+    font-size: 24px;
+}
+
+.portfolio-box nav ul li:hover {
+    color: rgb(180, 108, 13);
+}
+
+/* --- About Me Section (Replaces #About and related classes) --- */
+.container {
+    margin-top: 5%;
+    margin-left: 9%;
+    width: 80%;
+    font-size: 20px;
+}
+
+.container h3 { /* Style for 'About Me' title */
+    font-size: 35px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-style: italic;
+    text-align: center;
+    font-weight: 70;
+    margin-bottom: 20px;
+}
+
+.container p { /* Style for the 'About Me' paragraph */
+    font-size: 23px;
+    font-family: 'Times New Roman', Times, serif;
+    font-style: italic;
+    font-weight: 60;
+    line-height: 1.6;
+}
+
+/* --- Project Section (Replaces #blog and #for_flex) --- */
+.container_container { /* Main Project container */
+    margin-top: 5%;
+    margin-left: 9%;
+    width: 80%;
+    font-size: 20px;
+}
+
+.container_container .heading { /* Style for 'Project' title */
+    font-size: 35px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-style: italic;
+    text-align: center;
+    font-weight: 70;
+    margin-bottom: 30px;
+}
+
+#box1 { /* This ID is used for the flex container holding the projects (replaces #for_flex) */
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+}
+
+.box { /* Individual project box */
+    width: 48%; /* Allows two boxes side-by-side with gap */
+}
+
+.box img {
+    /* Adjusted image styling to fit within the box */
+    width: 100%;
+    height: auto;
+    display: block;
+    margin-left: 0; /* Remove original margin-left */
+    margin-bottom: 15px;
+}
+
+.box .para { /* Paragraph text within the project box (replaces .abt) */
+    font-size: 16px;
+    font-family: 'Times New Roman', Times, serif;
+    line-height: 1.5;
+}
+footer{
+    margin-top: 4%;
+    text-align: center;
+    font-size: 40px;
+}
+form label{
+    font-size: 34px;
+   font-family: 'Times New Roman', Times, serif;
+   font-style: oblique;
+   font-weight: 60;
+}
+form textarea {
+    width: 100%;
+    height: 50px;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    resize: none;
+    font-size: 14px;
+    font-size: 20px;
+    font-family: 'Times New Roman', Times, serif;
+    font-style: oblique;
+    font-weight: 60;
+}
+form button{
+    margin-left: 1%;
+    height: 60px;
+    width: 200px;
+    border-radius:5%;
+    font-size: 20px;
+    font-style: italic;
+    font-weight: 50;
+    color: black;
+    background-color: rgb(237, 221, 201);
+}
+form button:hover{
+    cursor: pointer;
+    background-color: rgb(237, 146, 9);
+}
+
+/* There is no contact section, form, or footer in your current HTML,
+   but I will leave the styles here in case you add them later. */
+/* #contact{ border: 2px solid black; }
+
+footer{
+    margin-top: 4%;
+    text-align: center;
+    font-size: 40px;
+}
+... (form/button styles)
+*/
+
+/* --- Media Queries (Mobile View) --- */
+@media (max-width: 400px) {
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    
+    /* Header/Video Section */
+    header {
+        height: 50vh; /* Shorter video on mobile */
+    }
+
+    .ID h1 {
+        font-size: 40px;
+    }
+    
+    .ID p {
+        font-size: 20px;
+    }
+    
+    .portfolio-box { /* Navigation (replaces #box1) */
+        display: flex;
+        justify-content: space-between;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        padding: 15px;
+        font-size: 16px;
+        gap: 10px;
+        background: rgba(0,0,0,0.8); /* Opaque background for fixed nav */
+        z-index: 9999;
+    }
+    
+    .portfolio-box h2 {
+        font-size: 18px;
+    }
+
+    .portfolio-box nav ul {
+        gap: 15px;
+    }
+    
+    .portfolio-box nav ul li {
+        font-size: 16px;
+    }
+
+    /* About Section */
+    .container { /* Replaces #About */
+        margin-top: 80px; /* FIX: Navbar overlapping content */
+        margin-bottom: 40px;
+        width: 90%;
+        margin-left: auto;
+        margin-right: auto;
+        font-size: 16px;
+    }
+    
+    .container h3 {
+        font-size: 22px;
+    }
+    
+    .container p {
+        margin-top: 5px;
+        font-size: 14px;
+        font-family: 'Lucida Sans', sans-serif;
+    }
+    
+    /* Project Section */
+    .container_container {
+        width: 90%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .container_container .heading {
+        font-size: 22px;
+    }
+    
+    #box1 { /* Project Flex Container (replaces #for_flex) */
+        display: block; /* FIX: Stack projects vertically */
+    }
+    
+    .box {
+        width: 100%;
+        margin-bottom: 25px;
+    }
+
+    .box img {
+        width: 100%;
+        height: auto;
+        margin-bottom: 10px;
+    }
+
+    .box .para {
+        font-size: 14px;
+    }
+    form {
+        width: 90%;
+        margin: auto;
+        padding: 15px;
+    }
+
+    form label {
+        font-size: 14px;
+    }
+
+    form textarea,
+    form input {
+        height: 40px;
+        font-size: 14px;
+        padding: 8px;
+    }
+
+    form button {
+        padding: 10px;
+        font-size: 14px;
+        width: 100%;
+        border-radius: 8px;
+    }
+
+    footer {   
+        text-align: center;
+        font-size: 16px;
+    }
+    
+    /* Removed unused mobile contact/form/footer styles */
+
+}
